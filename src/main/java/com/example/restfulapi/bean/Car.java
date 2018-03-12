@@ -42,7 +42,6 @@ public class Car {
         this.model = model;
     }
 
-    //test
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
