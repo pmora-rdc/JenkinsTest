@@ -8,6 +8,7 @@ import com.example.restfulapi.bean.Car;
 
 @Repository
 public interface CarRepository extends MongoRepository < Car, String > {
+
     @Query("{ 'model' : ?0 }")
     Car findByModel(String model);
 
