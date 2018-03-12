@@ -20,6 +20,13 @@ public class CarController {
         return carService.find(id);
     }
 
+    //this is a comment
+    @GetMapping("/car/findbybrand/{brand}")
+    public List<Car> FindByBrand(@PathVariable String brand) {
+        CarService carService = (CarService)context.getBean ("carService");
+        return carService.findByBrand(brand);
+    }
+
     @GetMapping("/car")
     public List<Car> Get() {
 
