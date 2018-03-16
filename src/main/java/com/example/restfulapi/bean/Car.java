@@ -3,6 +3,8 @@ package com.example.restfulapi.bean;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+// TODO: Understand Bean Concepts
+
 @Document(collection = "cars")
 public class Car {
     @Id
