@@ -13,8 +13,6 @@ public class RestfulapiApplication {
 
 	public static void main(String[] args) {
 		// TODO: Understand the following concepts: Spring Beans, Spring Context & Dependency Injection
-
-		AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		SpringApplication.run(RestfulapiApplication.class, args);
 	}
 }
