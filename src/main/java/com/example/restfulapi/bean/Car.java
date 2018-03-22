@@ -14,8 +14,9 @@ public class Car {
 
     public Car(){}
 
-    public Car(String brand, String model) {
+    public Car(String id, String brand, String model) {
         super();
+        this.id = id;
         this.brand = brand;
         this.model = model;
     }
