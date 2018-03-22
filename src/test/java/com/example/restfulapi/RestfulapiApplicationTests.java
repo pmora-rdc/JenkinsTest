@@ -21,7 +21,7 @@ public class RestfulapiApplicationTests {
 	static final int expectedQty = 3;
 
 	@Test
-	public void checkCarRepoLength() {
+	public void checkCarRepositoryLength() {
 		List<Car> carLength = carRepo.findAll();
 
 		assertEquals(expectedQty, carLength.size() + 1);
