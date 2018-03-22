@@ -33,7 +33,7 @@ public class RestfulapiApplicationTests {
 	}
 
     @Test
-    public void checkCaId() {
+    public void checkCarId() {
 	    String carId = "5aa323f93f4a64131c058b241";
         Car car = carRepo.findOne(carId);
 
