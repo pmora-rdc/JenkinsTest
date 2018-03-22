@@ -29,12 +29,12 @@ public class RestfulapiApplicationTests {
 	public void checkCarRepositoryLength() {
 		List<Car> carLength = carRepo.findAll();
 
-		assertEquals(expectedQty, carLength.size() + 1);
+		assertEquals(expectedQty, carLength.size());
 	}
 
     @Test
     public void checkCarId() {
-	    String carId = "5aa323f93f4a64131c058b241";
+	    String carId = "5aa323f93f4a64131c058b24";
         Car car = carRepo.findOne(carId);
 
         assertNotNull("Car object is null. The id wasn't found.", car);
@@ -46,7 +46,7 @@ public class RestfulapiApplicationTests {
 
 	    Car createdCar = carRepo.save(newCar);
 
-	    assertFalse("The new object couldn't be created or Updated", newCar.getBrand() == createdCar.getBrand() && newCar.getModel() == createdCar.getModel());
+	    assertTrue("The new object couldn't be created or Updated", newCar.getBrand() == createdCar.getBrand() && newCar.getModel() == createdCar.getModel());
     }
 
     @Test
@@ -57,6 +57,6 @@ public class RestfulapiApplicationTests {
 
         Car car = carRepo.findOne(carId);
 
-        assertNotNull("Car was deleted. The id wasn't found.", car);
+        assertNull("Car was deleted. The id wasn't found.", car);
     }
 }
