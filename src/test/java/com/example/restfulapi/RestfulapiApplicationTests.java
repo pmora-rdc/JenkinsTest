@@ -18,12 +18,12 @@ public class RestfulapiApplicationTests {
 	@Autowired
 	CarRepository carRepo;
 
-	static final int quantity = 3;
+	static final int expectedQty = 3;
 
 	@Test
 	public void checkLength() {
 		List<Car> carLength = carRepo.findAll();
 
-		assertEquals(quantity + 1, carLength.size());
+		assertEquals(expectedQty, carLength.size() + 1);
 	}
 }
