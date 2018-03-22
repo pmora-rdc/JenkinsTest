@@ -29,7 +29,7 @@ public class RestfulapiApplicationTests {
 	public void checkCarRepositoryLength() {
 		List<Car> carLength = carRepo.findAll();
 
-		assertEquals(expectedQty, carLength.size());
+		assertEquals("Number of cars is different to " + expectedQty, expectedQty, carLength.size());
 	}
 
     @Test
