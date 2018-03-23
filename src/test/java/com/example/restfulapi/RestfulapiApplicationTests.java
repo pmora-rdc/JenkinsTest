@@ -20,21 +20,21 @@ import static org.junit.Assert.*;
 @SpringBootTest
 public class RestfulapiApplicationTests {
 
-	@Autowired
-	CarRepository carRepo;
+    @Autowired
+    CarRepository carRepo;
 
-	static final int expectedQty = 3;
+    static final int expectedQty = 3;
 
-	@Test
-	public void checkCarRepositoryLength() {
-		List<Car> carLength = carRepo.findAll();
+    @Test
+    public void checkCarRepositoryLength() {
+        List<Car> carLength = carRepo.findAll();
 
-		assertEquals("Number of cars is different to " + expectedQty, expectedQty, carLength.size());
-	}
+        assertEquals("Number of cars is different to " + expectedQty, expectedQty, carLength.size());
+    }
 
     @Test
     public void checkCarId() {
-	    String carId = "5aa323f93f4a64131c058b24";
+        String carId = "5aa323f93f4a64131c058b24";
         Car car = carRepo.findOne(carId);
 
         assertNotNull("Car object is null. The id wasn't found.", car);
@@ -42,18 +42,18 @@ public class RestfulapiApplicationTests {
 
     @Test
     public void checkCarCreation() {
-	    Car newCar = new Car("12", "MyBrand", "MyModel");
+        Car newCar = new Car("12", "MyBrand", "MyModel");
 
-	    Car createdCar = carRepo.save(newCar);
+        Car createdCar = carRepo.save(newCar);
 
-	    assertTrue("The new object couldn't be created or Updated", newCar.getBrand() == createdCar.getBrand() && newCar.getModel() == createdCar.getModel());
+        assertTrue("The new object couldn't be created or Updated", newCar.getBrand() == createdCar.getBrand() && newCar.getModel() == createdCar.getModel());
     }
 
     @Test
     public void checkCarDeletion() {
-	    String carId = "12";
+        String carId = "12";
 
-	    carRepo.deleteById(carId);
+        carRepo.deleteById(carId);
 
         Car car = carRepo.findOne(carId);
 
